@@ -1,0 +1,342 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Background Image */
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind the content */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease;
+  }
+  
+  .background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity here */
+    z-index: 0;
+  }
+  
+  .light-mode .background-image {
+    background-image: url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60'); /* Light mode background */
+  }
+  
+  .dark-mode .background-image {
+    background-image: url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60&grayscale'); /* Dark mode background */
+    filter: grayscale(100%); /* Black-and-white effect */
+  }
+  
+  /* Steering Wheel Decoration */
+  .steering-wheel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; /* Reduced size */
+    height: 60px; /* Reduced size */
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8); /* Light background */
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .steering-wheel:hover {
+    background: rgba(255, 255, 255, 1); /* Brighter on hover */
+  }
+  
+  .peace-symbol {
+    width: 40px; /* Size of the peace symbol */
+    height: 40px; /* Size of the peace symbol */
+    background: transparent;
+    border: 3px solid #007bff; /* Blue color for the peace symbol */
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .peace-symbol::before,
+  .peace-symbol::after {
+    content: '';
+    position: absolute;
+    background: #007bff; /* Blue color for the peace symbol */
+  }
+  
+  .peace-symbol::before {
+    width: 3px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .peace-symbol::after {
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  /* Buttons */
+  .car-button {
+    background-color: #007bff; /* Blue color for buttons */
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* Rounded edges */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .car-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .car-button.clicked {
+    animation: clickAnimation 0.3s ease;
+  }
+  
+  @keyframes clickAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Header Styles */
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.7); /* Lighter background */
+    backdrop-filter: blur(5px); /* Blur effect */
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #333; /* Dark text for light mode */
+  }
+  
+  .dark-mode .header h1 {
+    color: #f4f4f9; /* Light text for dark mode */
+    
+  }
+  .dark-mode .header{
+   background-color: #000000;;
+  }
+  
+  .header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .theme-toggle, .more-button {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #007bff; /* Blue for buttons */
+    transition: color 0.3s ease;
+  }
+  
+  .theme-toggle:hover, .more-button:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .social-links {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .dark-mode .social-links {
+    background: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+  }
+  
+  .social-links a {
+    color: #333; /* Dark text for light mode */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .dark-mode .social-links a {
+    color: #f4f4f9; /* Light text for dark mode */
+  }
+  
+  .social-links a:hover {
+    color: #007bff; /* Blue on hover */
+  }
+  
+  /* Upload Form Styles */
+  .upload-form {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+  }
+  
+  .dark-mode .upload-form {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  }
+  
+  .file-upload {
+    margin-bottom: 20px;
+  }
+  
+  .custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff; /* Blue for buttons */
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  #file-upload {
+    display: none;
+  }
+  
+  .options {
+    margin-bottom: 20px;
+  }
+  
+  .option {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .option input {
+    margin-right: 10px;
+  }
+  
+  .option span {
+    font-size: 1rem;
+    color: #333; /* Dark text for light mode */
+  }
+  
+  .dark-mode .option span {
+    color: #f4f4f9; /* Light text for dark mode */
+  }
+  
+  .submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #28a745; /* Green for submit button */
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  /* Result Section Styles */
+  .result-section {
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+  }
+  
+  .dark-mode .result-section {
+    background: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+    color: #f4f4f9;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .image-box {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .uploaded-image, .dehazed-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result-text {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .result-text h3 {
+    font-size: 1.5rem;
+    color: #28a745; /* Green for result text */
+  }
+  
+  .result-text p {
+    font-size: 1.2rem;
+    color: #333; /* Dark text for light mode */
+  }
+  
+  .dark-mode .result-text p {
+    color: #f4f4f9; /* Light text for dark mode */
+  }
