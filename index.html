@@ -1,41 +1,50 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ... other head elements ... -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Change this line: -->
+    <script type="module" src="/src/main.jsx"></script>
+    <!-- To this: -->
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>
+
+
+
+
+<!-- <!doctype html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Number Plate Detection Application using React and Vite">
     <meta name="keywords" content="number plate, license plate, detection, react, vite">
     <meta name="author" content="Palla Tarun Teja">
     
-    <!-- Favicon (replace vite.svg with your own) -->
     <link rel="icon" type="image/svg+xml" href="/number-plate-detection/vite.svg" />
     <link rel="apple-touch-icon" href="/number-plate-detection/logo192.png">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <!-- Preconnect to important origins -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     
-    <!-- Preload critical resources -->
     <link rel="preload" href="/number-plate-detection/src/main.jsx" as="script">
     
-    <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#000000">
     
     <title>Number Plate Detection | React App</title>
     
-    <!-- GitHub Pages deployment fix -->
     <base href="/number-plate-detection/" />
     
-    <!-- iOS specific meta tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- Manifest for PWA -->
     <link rel="manifest" href="/number-plate-detection/manifest.json">
   </head>
   <body>
@@ -44,7 +53,6 @@
     </noscript>
     <div id="root"></div>
     
-    <!-- GitHub Pages 404 fallback -->
     <script>
       if (window.location.pathname.includes('404.html')) {
         window.location.href = '/number-plate-detection/index.html';
@@ -53,15 +61,14 @@
     
     <script type="module" src="/number-plate-detection/src/main.jsx"></script>
     
-    <!-- Error tracking (optional) -->
     <script>
       window.onerror = function(message, source, lineno, colno, error) {
         console.error('Application error:', {message, source, lineno, colno, error});
-        // Add error tracking code here if needed
+        
       };
     </script>
   </body>
-</html>
+</html> -->
 
 
 
