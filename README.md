@@ -19,7 +19,7 @@ A **frontend** application built using **React.js (Vite)** to interact with a Fl
 ## ⚙️ How to Run the Project
 1. Clone the frontend repository:
    ```bash
-   git clone https://github.com/PALLATARUNTEJA/number-plate-detection-frontend.git
+   git clone https://github.com/PALLATARUNTEJA/number-plate-detection.git
    ```
 2. Navigate to the project directory:
    ```bash
